@@ -5,6 +5,14 @@ using namespace std;
 
 class Person {
 
+private:
+  string name;
+  string location;
+
+public:
+  string getName() const { return this->name; }
+  string getLocation() const { return this->location; }
+
   Person() = default;
   Person(const string &n, const string &loc) : name(n), location(loc) {}
 
@@ -18,12 +26,11 @@ class Person {
     os << people.name << " " << people.location;
     return os;
   }
-
-private:
-  string name;
-  string location;
-
-public:
-  string getName() const { return this->name; }
-  string getLocation() const { return this->location; }
 };
+
+int main(int argc, char *argv[]) {
+  Person people_one;
+  Person people_two("Jack", "America");
+  cout << people_two.getName() << " " << people_two.getLocation();
+  return 0;
+}
